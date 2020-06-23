@@ -1,13 +1,13 @@
 import React from 'react';
 import {Provider} from 'react-redux';
 import './App.css';
-import ActionVisualizer from './components/ActionVisualizer'
+import BalancePage from './pages/Balance'
 import store from './store/store';
 function App() {
   return (
     <Provider store={store}>
     <div className="App">
-      <ActionVisualizer></ActionVisualizer>
+      <BalancePage></BalancePage>
     </div>
     </Provider>
   );
