@@ -16,12 +16,19 @@ const accountSlice = createSlice({
       from.balance = from.balance - payload.amount;
       to.balance = to.balance + payload.amount;
       return state;
+    },
+    extraction(state, action) {
+      const payload = action.payload;
+      const from = state.accounts.find(account => account.id === payload.from);
+      from.balance = from.balance - payload.amount;
+      return state;
     }
   }
 })
 
 export const {
-  transfer
+  transfer,
+  extraction
 } = accountSlice.actions
 
 export default accountSlice.reducer
